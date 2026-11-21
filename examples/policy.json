@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "review": [
+      {"id": "review-no-push", "kind": "git-push", "action": "kill"}
+    ]
+  },
+  "host": {
+    "armed": false,
+    "protected_exes": [],
+    "rules": [
+      {"id": "review-restricted-destination", "uid": 1100, "kind": "connect", "destination": "192.0.2.10:443", "action": "flag"}
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+name: Linux tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f tests/Dockerfile -t agent-smith-test .
+      - run: >-
+          docker run --rm --network none --cap-add SYS_PTRACE
+          --security-opt seccomp=unconfined agent-smith-test
