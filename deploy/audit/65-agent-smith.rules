@@ -1,0 +1,6 @@
+# Example: native 64-bit x86_64 or aarch64, ONE dedicated account.
+# Replace 1100 with the numeric effective UID assigned to your workloads.
+# Connect means an attempt, not necessarily a successful connection.
+# No global deletes, immutable-mode changes, or rate/backlog changes.
+-a always,exit -F arch=b64 -S execve,execveat -F euid=1100 -F success=1 -k agent_smith_exec
+-a always,exit -F arch=b64 -S connect -F euid=1100 -k agent_smith_connect

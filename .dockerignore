@@ -1,0 +1,11 @@
+**
+!go.mod
+!go.sum
+!cmd/
+!cmd/**
+!internal/
+!internal/**
+!examples/
+!examples/policy.json
+!tests/
+!tests/linux-smoke.sh
